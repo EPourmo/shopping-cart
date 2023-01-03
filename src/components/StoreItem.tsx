@@ -1,3 +1,5 @@
+import formatCurrency from "../utilities/formatCurrency";
+
 type StoreItemProps = {
   id: number;
   name: string;
@@ -12,7 +14,7 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
       <div className="flex flex-col p-6">
         <div className="flex flex-row items-baseline justify-between mb-4">
           <h2 className="text-2xl">{name}</h2>
-          <p className="text-xl text-gray-400">{price}</p>
+          <p className="text-xl text-gray-400">{formatCurrency(price)}</p>
         </div>
       </div>
     </div>
