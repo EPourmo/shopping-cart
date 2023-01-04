@@ -1,3 +1,4 @@
+import { useShoppingCart } from "../context/ShoppingCartContext";
 import formatCurrency from "../utilities/formatCurrency";
 import AddCart from "./AddCart";
 type StoreItemProps = {
@@ -8,7 +9,8 @@ type StoreItemProps = {
 };
 
 export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
-  const quantity = 1;
+  const { getItemQuantity, increaseCartQuantity } = useShoppingCart();
+  const quantity = getItemQuantity(id);
   return (
     <div className="h-98 rounded-md bg-white shadow-lg overflow-hidden">
       <img src={imgUrl} alt={name} className="h-52 object-cover w-full" />
@@ -19,11 +21,14 @@ export default function StoreItem({ id, name, price, imgUrl }: StoreItemProps) {
         </div>
         <div>
           {quantity === 0 ? (
-            <button className="w-full bg-sky-600 p-2 rounded-md text-white">
+            <button
+              className="w-full bg-sky-600 p-2 rounded-md text-white"
+              onClick={() => increaseCartQuantity(id)}
+            >
               + Add to cart
             </button>
           ) : (
-            <AddCart quantity={quantity} />
+            <AddCart quantity={quantity} id={id} />
           )}
         </div>
       </div>
