@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 type ShoppingCartProps = {
@@ -6,7 +5,7 @@ type ShoppingCartProps = {
 };
 
 export default function ShoppingCart({ isOpen }: ShoppingCartProps) {
-  const { openCart, closeCart } = useShoppingCart();
+  const { closeCart } = useShoppingCart();
   return (
     <>
       {isOpen && (

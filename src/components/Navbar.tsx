@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import ShoppingSvg from "./ShoppingSvg";
 export default function NavBar() {
-  const { openCart, closeCart, cartQuantity } = useShoppingCart();
+  const { openCart, cartQuantity } = useShoppingCart();
   return (
     <div className="bg-white shadow-sm sticky">
       <div className="flex items-center text-2xl p-4">
