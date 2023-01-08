@@ -14,7 +14,7 @@ export default function CartItem({ id, quantity }: CartItemProps) {
   return (
     <div>
       <div className="flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center mr-4">
           <img src={item.imgUrl} className=" h-20 w-32 object-cover mr-2" />
           <div>
             <p>

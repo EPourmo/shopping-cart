@@ -4,7 +4,7 @@ import ShoppingSvg from "./ShoppingSvg";
 export default function NavBar() {
   const { openCart, cartQuantity } = useShoppingCart();
   return (
-    <div className="bg-white shadow-sm sticky">
+    <div className="bg-white shadow-sm sticky top-0">
       <div className="flex items-center text-2xl p-4">
         <nav className="mr-auto">
           <Link to={"/"} className="mr-6">

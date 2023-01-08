@@ -12,7 +12,7 @@ export default function ShoppingCart({ isOpen }: ShoppingCartProps) {
   const { closeCart, cartItems } = useShoppingCart();
   return (
     <div
-      className={`fixed top-0 max-w-md sm:w-9/12 md:w-6/12 h-full right-0 z-50 bg-slate-50 shadow-xl ease-in-out duration-300 ${
+      className={`fixed top-0 max-w-md h-full right-0 z-50 bg-slate-50 shadow-xl ease-in-out duration-300 ${
         isOpen ? "translate-x-0" : "translate-x-full"
       } p-4`}
     >
